@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230527095232) do
+ActiveRecord::Schema.define(version: 20230527101823) do
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
-    t.string "age"
+    t.integer "age"
     t.string "f_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
