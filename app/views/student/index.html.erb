@@ -1,2 +1,41 @@
-<h1>Student#index</h1>
-<p>Find me in app/views/student/index.html.erb</p>
+<div class="students index">
+    <%= link_to("Create a recode", '/student/new', :class => 'action edit' ) %>
+<table class="table">
+	<thead>
+		<tr>
+  			<th>ID</th>
+    		<th>Name</th>
+   			<th>Age</th>
+    		<th>Father_name</th>
+   			<th>Phone_number</th>
+    		<th>Email</th>
+    		<th>Blood_group</th>
+    		<th>Show</th>
+   			<th>Edit</th>
+    		<th>Delete</th>
+  		</tr>
+  	</thead>
+  	<tbody>	
+  	<% @students.each do |student|%>
+  		<tr>
+  			<td><%= student.id %></td>
+    		<td><%= student.name %></td>
+    		<td><%= student.age %></td>
+    		<td><%= student.father_name %></td>
+    		<td><%= student.phone_number %></td>	
+   			<td><%= student.email %></td>
+    		<td><%= student.blood_group %></td>
+    		<td class="actions">
+    			<%= link_to("Show", 'student_new(student)', :class => 'action show' ) %>
+    		</td>
+    		<td class="actions">	
+    			<%= link_to("Edit", '#', :class => 'action edit' ) %>
+    		</td>
+    		<td class="actions">	
+    			<%= link_to("Delete", '#', :class => 'action delete' ) %>
+    		</td>
+  		</tr>
+  	<% end %>
+	</tbody>
+</table>
+</div>
