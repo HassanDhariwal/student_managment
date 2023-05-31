@@ -1,20 +1,24 @@
-class StudentController < ApplicationController
+class StudentsController < ApplicationController
   
   def index
     @students = Student.all
   end
 
   def show
+    # binding.pry
     @student = Student.find(params[:id])
-
   end
 
   def new
-    @student = Student.new({:name => 'Enter your name', :father_name => 'Enter your Father Name '})
+    # binding.pry
+    @student = Student.new({:name => 'Enter your name', :father_name => 'Enter your Father Name ', age:"18"})
   end   
 
   def create
+    binding.pry
+
     @student = Student.new( 
+
     name: params[:student][:name],
     age: params[:student][:age], 
     father_name: params[:student][:father_name], 
@@ -25,10 +29,14 @@ class StudentController < ApplicationController
     Updated: params[:student][:Updated]
     )
     if @student.save
-      redirect_to student_index_path
+    # binding.pry
+      redirect_to (student_index_path)
     else
-      render(new)
+      render('new')
     end    
   end
+
+  
+
 
 end

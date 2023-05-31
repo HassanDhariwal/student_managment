@@ -1,11 +1,8 @@
-<%= link_to("Back to list", '/student/index', :class => 'back link' ) %>
+<%= link_to("Back to list", '/students/index', :class => 'back link' ) %>
 <div class="students show">
 <h2>Show Student</h2>
 <table summary="students detail view">
-	<tr>
-  		<th>ID</th>
-  		<td><%= @student.id %></td>
-  	</tr>
+	
   	<tr>
 		<th>Name</th>
 		<td><%= @student.name %></td>    		
@@ -20,23 +17,23 @@
 	</tr>
 	<tr>	
 		<th>Phone_number</th>
-		<td><%= @student.Phone_number %></td>
+		<td><%= @student.phone_number %></td>
 	</tr>
 	<tr>
 		<th>Email</th>
-		<td><%= @student.Email %></td>
+		<td><%= @student.email %></td>
 	</tr>
 	<tr>
 		<th>Blood_group</th>
-		<td><%= @student.Blood_group %></td>
+		<td><%= @student.blood_group %></td>
 	</tr>
 	<tr>
 		<th>Created</th>
-		<td><%= @student.Created_at %></td>
+		<td><%= @student.created_at %></td>
 	</tr>
 	<tr>
 		<th>Updated</th>
-		<td><%= @student.Updated_at %></td>
+		<td><%= @student.updated_at %></td>
 	</tr>
 </table>
 </div>

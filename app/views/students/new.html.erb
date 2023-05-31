@@ -1,0 +1,32 @@
+
+<%= form_with url: "/students", method: :post do |f| %>
+  
+   <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>  
+  <p>
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </p>
+  <p>
+    <%= f.label :father_name %><br>
+    <%= f.text_field :father_name %>
+  </p>
+  <p>
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :blood_group %><br>
+    <%= f.text_field :blood_group %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to("Back to list", '/students/index', :class => 'back link' ) %>

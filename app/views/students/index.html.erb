@@ -1,5 +1,5 @@
 <div class="students index">
-    <%= link_to("Create a recode", '/student/new', :class => 'action edit' ) %>
+    <%= link_to("Create a recode", '/students/new', :class => 'action edit' ) %>
 <table class="table">
 	<thead>
 		<tr>
@@ -26,10 +26,10 @@
    			<td><%= student.email %></td>
     		<td><%= student.blood_group %></td>
     		<td class="actions">
-    			<%= link_to("Show", 'student_new(student)', :class => 'action show' ) %>
+    			<%= link_to("Show", '/students/show', :class => 'action show' ) %>
     		</td>
     		<td class="actions">	
-    			<%= link_to("Edit", '#', :class => 'action edit' ) %>
+    			<%= link_to("Edit", '', :class => 'action edit' ) %>
     		</td>
     		<td class="actions">	
     			<%= link_to("Delete", '#', :class => 'action delete' ) %>
