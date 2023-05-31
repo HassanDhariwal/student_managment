@@ -26,7 +26,8 @@
    			<td><%= student.email %></td>
     		<td><%= student.blood_group %></td>
     		<td class="actions">
-    			<%= link_to("Show", '/students/show', :class => 'action show' ) %>
+    			<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->
+    			<td><%= link_to 'Show', student_path(student), :class => 'action show' %></td>
     		</td>
     		<td class="actions">	
     			<%= link_to("Edit", '', :class => 'action edit' ) %>

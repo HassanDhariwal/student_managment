@@ -5,8 +5,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    # binding.pry
-    @student = Student.find(params[:id])
+    binding.pry
+    @student = Student.find_by_id(params[:id])
   end
 
   def new
@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
   end   
 
   def create
-    binding.pry
+    # binding.pry
 
     @student = Student.new( 
 
