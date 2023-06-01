@@ -1,5 +1,6 @@
 <div class="students index">
-    <%= link_to("Create a recode", '/students/new', :class => 'action edit' ) %>
+    <!-- <= link_to("Create a recode", '/students/new', :class => 'action edit' ) %> -->
+    <%= link_to("Create a recode", new_student_path, :class => 'action edit' ) %>
 <table class="table">
 	<thead>
 		<tr>
@@ -10,7 +11,7 @@
    			<th>Phone_number</th>
     		<th>Email</th>
     		<th>Blood_group</th>
-    		<th>Show</th>
+    		<th>Show</th>	
    			<th>Edit</th>
     		<th>Delete</th>
   		</tr>
@@ -26,11 +27,11 @@
    			<td><%= student.email %></td>
     		<td><%= student.blood_group %></td>
     		<td class="actions">
-    			<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->
-    			<td><%= link_to 'Show', student_path(student), :class => 'action show' %></td>
+    		<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->
+    		<td><%= link_to 'Show', student_path(student), :class => 'action show' %></td>
     		</td>
     		<td class="actions">	
-    			<%= link_to("Edit", '', :class => 'action edit' ) %>
+    			<%= link_to("Edit", edit_student_path(student), :class => 'action edit' ) %>
     		</td>
     		<td class="actions">	
     			<%= link_to("Delete", '#', :class => 'action delete' ) %>

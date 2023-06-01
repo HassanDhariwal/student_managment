@@ -1,0 +1,52 @@
+
+[1mFrom:[0m /home/hassan/project/student_managment/app/controllers/students_controller.rb:22 StudentsController#create:
+
+    [1;34m21[0m: [32mdef[0m [1;34mcreate[0m
+ => [1;34m22[0m:   binding.pry
+    [1;34m23[0m: 
+    [1;34m24[0m:   @student = [1;34;4mStudent[0m.new( 
+    [1;34m25[0m: 
+    [1;34m26[0m:   [35mname[0m: params[[33m:student[0m][[33m:name[0m],
+    [1;34m27[0m:   [35mage[0m: params[[33m:student[0m][[33m:age[0m], 
+    [1;34m28[0m:   [35mfather_name[0m: params[[33m:student[0m][[33m:father_name[0m], 
+    [1;34m29[0m:   [35mPhone_number[0m: params[[33m:student[0m][[33m:Phone_number[0m],
+    [1;34m30[0m:   [35mEmail[0m: params[[33m:student[0m][[33m:Email[0m],
+    [1;34m31[0m:   [35mBlood_group[0m: params[[33m:student[0m][[33m:Blood_group[0m],
+    [1;34m32[0m:   [35mCreated[0m: params[[33m:student[0m][[33m:Created[0m],
+    [1;34m33[0m:   [35mUpdated[0m: params[[33m:student[0m][[33m:Updated[0m]
+    [1;34m34[0m:   )
+    [1;34m35[0m:       [1;34m# binding.pry[0m
+    [1;34m36[0m: 
+    [1;34m37[0m:   [32mif[0m @student.save
+    [1;34m38[0m:     redirect_to (students_path)
+    [1;34m39[0m:   [32melse[0m
+    [1;34m40[0m:     render([31m[1;31m'[0m[31mnew[1;31m'[0m[31m[0m)
+    [1;34m41[0m:   [32mend[0m    
+    [1;34m42[0m: [32mend[0m
+
+
+[1mFrom:[0m /home/hassan/project/student_managment/app/controllers/students_controller.rb:22 StudentsController#create:
+
+    [1;34m21[0m: [32mdef[0m [1;34mcreate[0m
+ => [1;34m22[0m:   binding.pry
+    [1;34m23[0m: 
+    [1;34m24[0m:   @student = [1;34;4mStudent[0m.new( 
+    [1;34m25[0m: 
+    [1;34m26[0m:   [35mname[0m: params[[33m:student[0m][[33m:name[0m],
+    [1;34m27[0m:   [35mage[0m: params[[33m:student[0m][[33m:age[0m], 
+    [1;34m28[0m:   [35mfather_name[0m: params[[33m:student[0m][[33m:father_name[0m], 
+    [1;34m29[0m:   [35mPhone_number[0m: params[[33m:student[0m][[33m:Phone_number[0m],
+    [1;34m30[0m:   [35mEmail[0m: params[[33m:student[0m][[33m:Email[0m],
+    [1;34m31[0m:   [35mBlood_group[0m: params[[33m:student[0m][[33m:Blood_group[0m],
+    [1;34m32[0m:   [35mCreated[0m: params[[33m:student[0m][[33m:Created[0m],
+    [1;34m33[0m:   [35mUpdated[0m: params[[33m:student[0m][[33m:Updated[0m]
+    [1;34m34[0m:   )
+    [1;34m35[0m:       [1;34m# binding.pry[0m
+    [1;34m36[0m: 
+    [1;34m37[0m:   [32mif[0m @student.save
+    [1;34m38[0m:     redirect_to (students_path)
+    [1;34m39[0m:   [32melse[0m
+    [1;34m40[0m:     render([31m[1;31m'[0m[31mnew[1;31m'[0m[31m[0m)
+    [1;34m41[0m:   [32mend[0m    
+    [1;34m42[0m: [32mend[0m
+

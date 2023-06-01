@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    binding.pry
+    # binding.pry
     @student = Student.find_by_id(params[:id])
   end
 
@@ -14,23 +14,25 @@ class StudentsController < ApplicationController
     @student = Student.new({:name => 'Enter your name', :father_name => 'Enter your Father Name ', age:"18"})
   end   
 
+  def edit
+    @student = Student.find_by_id(params[:id])
+  end
+
   def create
-    # binding.pry
+
 
     @student = Student.new( 
+      name: params[:name],
+      age: params[:age], 
+      father_name: params[:father_name], 
+      phone_number: params[:phone_number],
+      email: params[:email],
+      blood_group: params[:blood_group]
+     )
 
-    name: params[:student][:name],
-    age: params[:student][:age], 
-    father_name: params[:student][:father_name], 
-    Phone_number: params[:student][:Phone_number],
-    Email: params[:student][:Email],
-    Blood_group: params[:student][:Blood_group],
-    Created: params[:student][:Created],
-    Updated: params[:student][:Updated]
-    )
+
     if @student.save
-    # binding.pry
-      redirect_to (student_index_path)
+      redirect_to (students_index_path)
     else
       render('new')
     end    
