@@ -37,8 +37,23 @@ class StudentsController < ApplicationController
       render('new')
     end    
   end
-
   
+  def update
+    # binding.pry
+    @student = Student.find_by_id(params[:id])
 
-
+    if @student.update(
+      name: params[:student][:name],
+      age: params[:student][:age], 
+      father_name: params[:student][:father_name], 
+      phone_number: params[:student][:phone_number],
+      email: params[:student][:email],
+      blood_group: params[:student][:blood_group]
+      )
+      redirect_to @student
+    else
+      flash[:error] = "Student not found."
+      render 'edit'
+    end
+  end
 end
