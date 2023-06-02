@@ -39,7 +39,7 @@ class StudentsController < ApplicationController
   end
   
   def update
-    # binding.pry
+    # binding.pry 
     @student = Student.find_by_id(params[:id])
 
     if @student.update(
@@ -56,4 +56,11 @@ class StudentsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @student = Student.find_by_id(params[:id])
+    @student.destroy
+    redirect_to (students_index_path)
+
+  end  
 end
