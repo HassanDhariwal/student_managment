@@ -44,3 +44,5 @@
 # Traceback (most recent call last):
 #         1: from (irb):11
 # NoMethodError (undefined method `save' for nil:NilClass)
+# 6th recode 
+# s_class = StudentClass.new(section_name: "A", teacher_name: "farooq_ali", student_name: "ali", grade: 12 )
