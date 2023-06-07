@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   # get "student_classes/index"
   resources :students
 
-
-resources :students do
-  resources :student_classes
-end
   get "students/index"
 
 

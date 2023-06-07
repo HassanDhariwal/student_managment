@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @student = Student.new( 
       name: params[:name],
       age: params[:age], 
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
       blood_group: params[:blood_group]
      )
 
-    @s_classes = StudentClass.create(section_name: params[:section_name])
+    @s_classes = StudentClass.create(section_name: params[:section_name], teacher_name: params[:teacher_name], student_range: params[:student_range], grade: params[:grade])
 
 
     if @student.save
