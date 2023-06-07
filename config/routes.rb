@@ -2,8 +2,16 @@ Rails.application.routes.draw do
   root "students#index"
   get "students/index"
   # "controller name/ action"
-
+  # get "student_classes/index"
   resources :students
+
+
+resources :students do
+  resources :student_classes
+end
+  get "students/index"
+
+
   # get 'student/new'
   # get 'student/show's
   # post 'student/create'

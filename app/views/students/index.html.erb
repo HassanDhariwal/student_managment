@@ -41,4 +41,25 @@
   	<% end %>
 	</tbody>
 </table>
+<table class="table">
+	<thead>
+		<tr>
+  			<th>ID</th>
+    		<th>Name</th>
+   			<th>Age</th>
+    		<th>Father_name</th>
+   			
+  		</tr>
+  	</thead>
+  	<tbody>	
+  	<% @s_classes.each do |student|%>
+  		<tr>
+  			<td><%= student.id %></td>
+    		<td><%= student.grade %></td>
+    		<td><%= student.teacher_name %></td>
+    		<td><%= student.section_name %></td>	
+  		</tr>
+  	<% end %>
+	</tbody>
+</table>
 </div>

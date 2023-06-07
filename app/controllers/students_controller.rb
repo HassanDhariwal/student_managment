@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   
   def index
     @students = Student.all
+    @s_classes =StudentClass.all
   end
 
   def show
@@ -19,8 +20,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-
-
+    binding.pry
     @student = Student.new( 
       name: params[:name],
       age: params[:age], 
@@ -29,6 +29,8 @@ class StudentsController < ApplicationController
       email: params[:email],
       blood_group: params[:blood_group]
      )
+
+    @s_classes = StudentClass.create(section_name: params[:section_name])
 
 
     if @student.save
@@ -63,4 +65,16 @@ class StudentsController < ApplicationController
     redirect_to (students_index_path)
 
   end  
+
+  # StudentClass CRUD operations
+  
+  def student_class_index
+    @s_classes = StudentClass.all
+  end
+
+
+
+
+
+
 end
