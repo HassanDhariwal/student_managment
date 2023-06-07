@@ -1,3 +1,9 @@
+<style>
+  .table td {
+    padding-left: 15px; /* Adjust the desired amount of space */
+  }
+</style>
+
 <div class="students index">
     <!-- <= link_to("Create a recode", '/students/new', :class => 'action edit' ) %> -->
     <%= link_to("Create a recode", new_student_path, :class => 'action edit' ) %>
@@ -41,9 +47,12 @@
   	<% end %>
 	</tbody>
 </table>
+
+<br>
 <table class="table">
 	<thead>
 		<tr>
+			<th>ID</th>
     		<th>Section_name</th>
   			<th>Teacher_name</th>
     		<th>Student_range</th>
