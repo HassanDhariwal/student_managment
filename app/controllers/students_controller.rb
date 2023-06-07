@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 
   def new
     # binding.pry
-    @student = Student.new({:name => 'Enter your name', :father_name => 'Enter your Father Name ', age:"18"})
+    @student = Student.new
   end   
 
   def edit
@@ -61,20 +61,16 @@ class StudentsController < ApplicationController
 
   def destroy
     @student = Student.find_by_id(params[:id])
+    #TODO: Will set by Call back after complete the code
     @student.destroy
     redirect_to (students_index_path)
 
   end  
-
+ 
   # StudentClass CRUD operations
   
   def student_class_index
     @s_classes = StudentClass.all
   end
-
-
-
-
-
 
 end
