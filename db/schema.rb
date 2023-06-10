@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230607121511) do
-
-  create_table "student_classes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
-    t.string "section_name"
-    t.string "teacher_name"
-    t.integer "student_range"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "grade"
-    t.index ["section_name"], name: "index_student_classes_on_section_name", unique: true
-  end
+ActiveRecord::Schema.define(version: 20230610132706) do
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
