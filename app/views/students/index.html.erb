@@ -20,6 +20,7 @@
    			<th>Phone_number</th>
     		<th>Email</th>
     		<th>Blood_group</th>
+    		<th>Section id</th>
     		<th>Show</th>	
    			<th>Edit</th>
     		<th>Delete</th>
@@ -35,6 +36,8 @@
     			<td><%= student.phone_number %></td>	
    				<td><%= student.email %></td>
     			<td><%= student.blood_group %></td>
+    			<td><%= student.section&.section %></td>
+
     			<td class="actions">
     			<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->
     			<td><%= link_to 'Show', student_path(student), :class => 'action show' %></td>
@@ -55,19 +58,21 @@
 	<thead>
 		<tr>
 			<th>ID</th>
-    		<th>Section_name</th>
-  			<th>Teacher_name</th>
-    		<th>Student_range</th>
-   			
+    		<th>Section name</th>
+  			<th>Teacher name</th>
+    		<th>Student range</th>	
+    		\<th>total students</th>	
   		</tr>
   	</thead>
   	<tbody>	
-  	<% @sections.each do |student|%>
+
+  	<% @sections.each do |section|%>
   		<tr>
-    		<td><%= student.id %></td>	
-    		<td><%= student.section %></td>	
-  			<td><%= student.teacher_name %></td>
-    		<td><%= student.student_range %></td>	
+    		<td><%= section.id %></td>	
+    		<td><%= section.section %></td>	
+  			<td><%= section.teacher_name %></td>
+    		<td><%= section.student_range %></td>	
+    		<td><%= section.students.count %></td>	
   		</tr>
   	<% end %>
 	</tbody>
