@@ -50,29 +50,26 @@
   	<% end %>
 	</tbody>
 </table>
-
-<!-- <table class="table">
+<h1>2nd table</h1>
+<table class="table">
 	<thead>
 		<tr>
 			<th>ID</th>
     		<th>Section_name</th>
   			<th>Teacher_name</th>
     		<th>Student_range</th>
-   			<th>Grade</th>
    			
   		</tr>
   	</thead>
   	<tbody>	
-  	< @s_classes.each do |student|%>
+  	<% @sections.each do |student|%>
   		<tr>
-    		<td><= student.id %></td>	
-    		<td><= student.section_name %></td>	
-  			<td><= student.teacher_name %></td>
-    		<td><= student.student_range %></td>
-    		<td><= student.grade %></td>
+    		<td><%= student.id %></td>	
+    		<td><%= student.section %></td>	
+  			<td><%= student.teacher_name %></td>
+    		<td><%= student.student_range %></td>	
   		</tr>
-  	< end %>
+  	<% end %>
 	</tbody>
 </table>
 </div>
- -->
