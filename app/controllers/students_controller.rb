@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   
   def index
     @students = Student.all
-    # @s_classes =StudentClass.all
+    @sections = Section.all  
   end
 
   def show
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
       blood_group: params[:blood_group]
      )
 
-    # @s_classes =Sections.create(section_name: params[:section_name], teacher_name: params[:teacher_name], student_range: params[:student_range], grade: params[:grade])
+    @section = Section.create(section: params[:section], teacher_name: params[:teacher_name], student_range: params[:section_range])
 
 
     if @student.save
@@ -63,13 +63,5 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(params[:id])
     @student.destroy
     redirect_to (students_index_path)
-
   end  
- 
-  # StudentClass CRUD operations
-  
-  # def sessions_index
-  #   @s_classes = Sessions.all
-  # end
-
 end
