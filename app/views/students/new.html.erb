@@ -28,7 +28,9 @@
   </p>
   <p>
     <%= f.label :section %><br>
-    <%= f.text_field :section %>
+    <!-- <= f.text_field :section %> -->
+    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.section, s.id] }) %>
+
   </p>
   
   

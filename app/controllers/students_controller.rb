@@ -27,10 +27,11 @@ class StudentsController < ApplicationController
       father_name: params[:father_name], 
       phone_number: params[:phone_number],
       email: params[:email],
-      blood_group: params[:blood_group]
+      blood_group: params[:blood_group],
+      section_id: params[:section_id]
+
      )
 
-    @section = Section.create(section: params[:section], teacher_name: params[:teacher_name], student_range: params[:section_range])
 
 
     if @student.save
