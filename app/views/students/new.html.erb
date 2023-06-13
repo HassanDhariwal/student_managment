@@ -1,7 +1,6 @@
 
-<!-- <= form_with url: "/students", method: :post, local: true do |f| %> -->
 <%= form_with :url => students_path, :method => 'post', local: true do |f| %>
-  <!-- <= form_with(model: @student,url: "/students", method: :post, local: true) do |f| %> -->
+
 
    <p>
     <%= f.label :name %><br>
@@ -28,21 +27,12 @@
     <%= f.text_field :blood_group %>
   </p>
   <p>
-    <%= f.label :section_name %><br>
-    <%= f.text_field :section_name %>
+    <%= f.label :section %><br>
+    <!-- <= f.text_field :section %> -->
+    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.section, s.id] }) %>
+
   </p>
-  <p>
-    <%= f.label :teacher_name %><br>
-    <%= f.text_field :teacher_name %>
-  </p>
-  <p>
-    <%= f.label :student_range %><br>
-    <%= f.number_field :student_range %>
-  </p>
-  <p>
-    <%= f.label :grade %><br>
-    <%= f.number_field :grade %>
-  </p>
+  
   
   <div class="form-button">
     <%= f.submit ('create student') %>

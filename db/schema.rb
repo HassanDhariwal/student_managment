@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230607121511) do
+ActiveRecord::Schema.define(version: 20230613032212) do
 
-  create_table "student_classes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
-    t.string "section_name"
-    t.string "teacher_name"
+  create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
+    t.string "name"
     t.integer "student_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "grade"
-    t.index ["section_name"], name: "index_student_classes_on_section_name", unique: true
+    t.index ["name"], name: "index_sections_on_name", unique: true
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
@@ -31,6 +29,9 @@ ActiveRecord::Schema.define(version: 20230607121511) do
     t.string "phone_number"
     t.string "email"
     t.string "blood_group"
+    t.bigint "section_id"
+    t.index ["section_id"], name: "index_students_on_section_id"
   end
 
+  add_foreign_key "students", "sections"
 end
