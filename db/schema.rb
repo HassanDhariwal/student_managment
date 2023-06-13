@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230611172821) do
+ActiveRecord::Schema.define(version: 20230613021241) do
 
   create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
-    t.string "section"
-    t.string "teacher_name"
+    t.string "section_name"
     t.integer "student_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["section"], name: "index_sections_on_section", unique: true
+    t.index ["section_name"], name: "index_sections_on_section_name", unique: true
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
