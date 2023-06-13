@@ -2,7 +2,6 @@ class StudentsController < ApplicationController
   
   def index
     @students = Student.all
-    @sections = Section.all  
   end
 
   def show
