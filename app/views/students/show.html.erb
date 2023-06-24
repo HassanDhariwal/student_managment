@@ -1,4 +1,3 @@
-<%= link_to("Back to list", '/students/index', :class => 'form-button' ) %>
 
 <div class="students show">
 <h2>Show Student</h2>
@@ -29,13 +28,24 @@
 		<th>Blood_group</th>
 		<td><%= @student.blood_group %></td>
 	</tr>
+</table>
+<button class="btn btn-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
+<br>
+<h1>Section detail</h1>
+<table>
 	<tr>
-		<th>Created</th>
-		<td><%= @student.created_at %></td>
+		<th>Secotion ID</th>
+		<td><%= @student.section_id %></td>
 	</tr>
 	<tr>
-		<th>Updated</th>
-		<td><%= @student.updated_at %></td>
+		<th>Secotion name</th>
+		<td><%= @student.section&.name %></td>
+	</tr>
+	<tr>
+		<th>Student limits</th>
+		<td><%= @student.section&.student_range %></td>
 	</tr>
 </table>
 </div>
+<button class="btn btn-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
+<!-- <= link_to("Back to list", '/students/index', :class => 'form-button' ) %> -->

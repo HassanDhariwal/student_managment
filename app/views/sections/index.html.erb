@@ -1,0 +1,49 @@
+<style>
+  .table td{
+    padding-right: 10px; /* Adjust the desired amount of space */
+  }
+  .table th {
+    padding-right: 20px; /* Adjust the desired amount of space */
+  }
+  table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+</style>
+<!-- <= link_to("Create a recode", new_section_path, :class => 'action edit' ) %><br>
+<= link_to("students index page ", students_path, class: 'btn btn-primary') %> -->
+
+<h1>Section Details</h1>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+    		<th scope="col">Section name</th>
+    		<th scope="col">Student range</th>	
+    		<th scope="col">total students</th>
+    		<th scope="col">Show</th>
+    		<th scope="col">Edit</th>	
+    		<th scope="col">Delete</th>
+  		</tr>
+  	</thead>
+  	<tbody>	
+
+  	<% @sections.each do |section|%>
+  		<tr>
+    		<td><%= section.id %></td>	
+    		<td ><%= section.name %></td>	
+    		<td><%= section.student_range %></td>	
+    		<td><%= section.students.count %></td>
+    		<td class="actions">
+    		<!-- <= link_to("Show", '/sections', :class => 'action show' ) %> -->
+    		<%= link_to 'Show', section_path(section), :class => 'action show' %></td>
+     		<td class="actions">	
+     		<%= link_to("Edit", edit_section_path(section),:data => { confirm: "Are you sure you want to Edit this student?" }, :class => 'action edit' ) %>
+    		  			</td>
+    		<td class="actions">	
+ 			<%= link_to("Delete", section_path(section),:method => :delete,:data => { confirm: "Are you sure you want to delete this student?" },
+     		 	:class => 'action delete' ) %>
+    		</td>
+  		</tr>
+ 	<% end %>
+	</tbody>
+</table>

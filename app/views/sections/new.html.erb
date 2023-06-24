@@ -1,0 +1,28 @@
+<h1>Sections#new</h1>
+
+<%= form_with :url => sections_path, :method => 'post', local: true do |f| %>
+
+
+   <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>  
+  <p>
+    <%= f.label :student_range %><br>
+    <%= f.number_field :student_range %>
+  </p>
+  <!-- <p>
+    <= f.label :student_count%><br>
+    < = f.number_field :student_count %>
+  </p> -->
+  <p>
+    <%= f.label :choice_students%><br>
+    <%= f.select :student_id, options_for_select(Student.all.map { |s| [s.id] }) %>
+  </p>
+  <div class="form-button">
+    <%= f.submit ('create section') %>
+  </div>
+<% end %>
+<button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
+<!-- <= link_to("Back to list", '/sections/index', :class => 'back link' ) %> -->
+

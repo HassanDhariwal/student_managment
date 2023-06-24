@@ -1,15 +1,33 @@
+
+<h3> Stusents index </h3>
+
+
 <style>
   .table td{
-    padding-right: 10px; /* Adjust the desired amount of space */
+    padding-right: 5px; /* Adjust the desired amount of space */
   }
   .table th {
     padding-right: 40px; /* Adjust the desired amount of space */
   }
+  table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
 </style>
 
-<div class="students index">
-    <!-- <= link_to("Create a recode", '/students/new', :class => 'action edit' ) %> -->
-    <%= link_to("Create a recode", new_student_path, :class => 'action edit' ) %>
+
+<!-- <h1>All comment of link and button</h1> -->
+<div class="table table-dark table-striped">
+  <!-- <button class="btn btn-primary" onclick="location.href='<%= new_student_path %>'" role="button"> Student Record</button> -->
+  <!-- <a class="btn btn-primary" href="<= new_student_path %>" role="button">Create a  recode
+  </a> -->
+    <!-- <= link_to("Create a <source src="" type="">ode", '/students/new', :class => 'action edit' ) %> -->
+    <!-- <= link_to("Create a Student recode", new_student_path, class: 'btn btn-primary') %> -->
+    <!-- <button class="btn btn-primary" onclick="location.href='<%= new_section_path %>'" role="button">Section Record</button>
+    <br>  
+    <button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button">Section index Record</button>
+ -->
+ <br>
+    
 <table class="table">
 	<thead>
 		<tr>
@@ -29,19 +47,18 @@
   	<tbody>	
   		<% @students.each do |student|%>
   			<tr>
-  				<td><%= student.id %></td>
+  				<td><%= student.id %></td>  
     			<td><%= student.name %></td>
     			<td><%= student.age %></td>
     			<td><%= student.father_name %></td>
     			<td><%= student.phone_number %></td>	
-   				<td><%= student.email %></td>
+   				<td><%= student.email %></td> 
     			<td><%= student.blood_group %></td>
-    			<td><%= student.section&.section_name %></td>
+    			<td><%= student.section&.id %></td>
 
     			<td class="actions">
     			<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->
-    			<td><%= link_to 'Show', student_path(student), :class => 'action show' %></td>
-    			</td>
+    			<%= link_to 'Show', student_path(student), :class => 'action show' %></td>
     			<td class="actions">	
     				<%= link_to("Edit", edit_student_path(student),:data => { confirm: "Are you sure you want to Edit this student?" }, :class => 'action edit' ) %>
     			</td>
@@ -50,28 +67,6 @@
     			 :class => 'action delete' ) %>
     			</td>
   			</tr>
-  	<% end %>
-	</tbody>
-</table>
-<h1>2nd table</h1>
-<table class="table">
-	<thead>
-		<tr>
-			<th>ID</th>
-    		<th>Section name</th>
-    		<th>Student range</th>	
-    		<th>total students</th>	
-  		</tr>
-  	</thead>
-  	<tbody>	
-
-  	<% @sections.each do |section|%>
-  		<tr>
-    		<td><%= section.id %></td>	
-    		<td><%= section.section_name %></td>	
-    		<td><%= section.student_range %></td>	
-    		<td><%= section.students.count %></td>	
-  		</tr>
   	<% end %>
 	</tbody>
 </table>
