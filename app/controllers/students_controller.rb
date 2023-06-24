@@ -5,7 +5,6 @@ class StudentsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @student = Student.find_by_id(params[:id])
   end
 
@@ -28,7 +27,6 @@ class StudentsController < ApplicationController
       email: params[:email],
       blood_group: params[:blood_group],
       section_id: params[:section_id]
-
      )
 
 
@@ -50,7 +48,8 @@ class StudentsController < ApplicationController
       father_name: params[:student][:father_name], 
       phone_number: params[:student][:phone_number],
       email: params[:student][:email],
-      blood_group: params[:student][:blood_group]
+      blood_group: params[:student][:blood_group],
+      section_id: params[:student][:section_id]
       )
       redirect_to @student
     else

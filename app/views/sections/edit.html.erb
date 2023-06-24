@@ -1,0 +1,22 @@
+<h1>Sections#edit</h1>
+<p>Find me in app/views/sections/edit.html.erb</p>
+
+<div class="students Edit">
+<h2>Update Student</h2>
+
+  <%= form_with(model: @section,url: section_path(@section), :method => 'patch', local: true) do |f| %>
+   <p>
+    <%= f.label :section_name %><br>
+    <%= f.text_field :name %>
+  </p>  
+  <p>
+    <%= f.label :student_range %><br>
+    <%= f.number_field :student_range %>
+  </p>
+  <p>
+    <%= f.submit ('update student') %>
+  </p>
+<% end %>
+<button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
+
+

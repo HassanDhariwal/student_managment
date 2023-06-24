@@ -1,0 +1,21 @@
+<h1>Sections show</h1>
+
+<table summary="students detail view">
+	
+  	<tr>
+		<th>Name</th>
+		<td><%= @section.name %></td>    		
+	</tr>
+	<tr>
+		<th>Student Range</th>
+		<td><%= @section.student_range %></td>    		
+	</tr>
+	<tr>
+		<th>Student Range</th>
+		<td><%= @section.students.count %></td>
+  		
+	</tr>
+
+</table>
+<button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
+
