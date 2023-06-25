@@ -49,11 +49,31 @@
   			<tr>
   				<td><%= student.id %></td>  
     			<td><%= student.name %></td>
-    			<td><%= student.age %></td>
+    			<td><% if student.age <= 60 %>
+            <%= student.age %>
+            <% else %>
+            <script>
+              alert("Error: Student range must be less than or equal to 60.");
+            </script>
+
+            Maximum limit exceeded
+            <% end %>
+          </td>
     			<td><%= student.father_name %></td>
     			<td><%= student.phone_number %></td>	
    				<td><%= student.email %></td> 
-    			<td><%= student.blood_group %></td>
+    			<td><% if /(A\+|A\-|B\+|B\-|AB\+|AB\-|O\+|O\-)/.match?(student.blood_group) %>
+            <%= student.blood_group %>
+            <% else %>
+           <!--  <script>
+              // alert("enter a correct blood group like A+")
+            </script>
+ -->
+            invalid blood group
+            <% end %>
+
+              
+            </td>
     			<td><%= student.section&.id %></td>
 
     			<td class="actions">

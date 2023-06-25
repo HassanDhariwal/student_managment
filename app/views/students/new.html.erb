@@ -8,7 +8,7 @@
   </p>  
   <p>
     <%= f.label :age %><br>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, in: 1...61%>
   </p>
   <p>
     <%= f.label :father_name %><br>
@@ -24,11 +24,11 @@
   </p>
   <p>
     <%= f.label :blood_group %><br>
-    <%= f.text_field :blood_group %>
+    <%= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), prompt: 'Select blood group'%>
   </p>
   <p>
     <%= f.label :section_name %><br>
-    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }) %>
+    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }),prompt: 'Select section_name' %>
   </p>
   
   <div class="form-button">

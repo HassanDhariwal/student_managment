@@ -7,9 +7,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>  
+  
   <p>
     <%= f.label :student_range %><br>
-    <%= f.number_field :student_range %>
+      <%= f.number_field :student_range, in: 1..60 %><!-- Set the range limit for the student_range field -->
   </p>
   <!-- <p>
     <= f.label :student_count%><br>

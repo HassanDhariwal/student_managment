@@ -31,7 +31,17 @@
   		<tr>
     		<td><%= section.id %></td>	
     		<td ><%= section.name %></td>	
-    		<td><%= section.student_range %></td>	
+    		<td> 
+          <% if  section.student_range <= 60 %>
+            <%= section.student_range %>
+            <% else %>
+            <script>
+              alert("Error: Student range must be less than or equal to 60.");
+            </script>
+
+            Maximum limit exceeded
+            <% end %>
+          </td>	
     		<td><%= section.students.count %></td>
     		<td class="actions">
     		<!-- <= link_to("Show", '/sections', :class => 'action show' ) %> -->
