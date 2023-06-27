@@ -7,11 +7,11 @@
   <%= form_with(model: @section,url: section_path(@section), :method => 'patch', local: true) do |f| %>
    <p>
     <%= f.label :section_name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
   </p>  
   <p>
     <%= f.label :student_range %><br>
-      <%= f.number_field :student_range, in: 1..60 %><!-- Set the range limit for the student_range field -->
+    <%= f.number_field :student_range, in: 1..60, required: true, class: 'form-control' %>
   </p>
   <p>
     <%= f.submit ('update student') %>

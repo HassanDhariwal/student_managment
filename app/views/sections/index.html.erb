@@ -32,7 +32,7 @@
     		<td><%= section.id %></td>	
     		<td ><%= section.name %></td>	
     		<td> 
-          <% if  section.student_range <= 60 %>
+          <% if section.student_range.present? && section.student_range <= 60 %>
             <%= section.student_range %>
             <% else %>
             <script>

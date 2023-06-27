@@ -14,7 +14,6 @@
   border-collapse: collapse;
 </style>
 
-
 <!-- <h1>All comment of link and button</h1> -->
 <div class="table table-dark table-striped">
   <!-- <button class="btn btn-primary" onclick="location.href='<%= new_student_path %>'" role="button"> Student Record</button> -->
@@ -55,20 +54,25 @@
             <script>
               alert("Error: Student range must be less than or equal to 60.");
             </script>
-
             Maximum limit exceeded
             <% end %>
           </td>
     			<td><%= student.father_name %></td>
-    			<td><%= student.phone_number %></td>	
+    			<td>
+            <% if student.phone_number.present? %>
+              <% student_phone_number = "#{student.phone_number[0..3]}- #{student.phone_number[4..10]}" %>
+              <%= student_phone_number %>
+             <% else %>
+              No phone number provided
+            <% end %>
+          </td>
    				<td><%= student.email %></td> 
     			<td><% if /(A\+|A\-|B\+|B\-|AB\+|AB\-|O\+|O\-)/.match?(student.blood_group) %>
             <%= student.blood_group %>
             <% else %>
-           <!--  <script>
-              // alert("enter a correct blood group like A+")
+            <script>
+              alert("enter a correct blood group like A+")
             </script>
- -->
             invalid blood group
             <% end %>
 

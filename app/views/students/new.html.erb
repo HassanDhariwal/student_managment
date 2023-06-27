@@ -1,35 +1,36 @@
-
+<div class="form-container">
 <%= form_with :url => students_path, :method => 'post', local: true do |f| %>
 
 
-   <p>
+   <div class="form-group"> 
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>  
-  <p>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
+  </div>  
+  <div class="form-group">
     <%= f.label :age %><br>
-    <%= f.number_field :age, in: 1...61%>
-  </p>
-  <p>
+    <%= f.number_field :age, in: 1...61, required: true, class: 'form-control' %>
+
+  </div>
+  <div class="form-group">
     <%= f.label :father_name %><br>
-    <%= f.text_field :father_name %>
-  </p>
-  <p>
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </p>
-  <p>
+    <%= f.text_field :father_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number,'Phone Number', class: 'control-label' %><br>
+    <%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 11, placeholder: 'xxxx-xxxxxx', class: 'form-control' %>
+  </div>
+  <div class="form-group">
     <%= f.label :email %><br>
     <%= f.email_field :email %>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <%= f.label :blood_group %><br>
     <%= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), prompt: 'Select blood group'%>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <%= f.label :section_name %><br>
     <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }),prompt: 'Select section_name' %>
-  </p>
+  </div>
   
   <div class="form-button">
     <%= f.submit ('create student') %>
@@ -38,3 +39,4 @@
 <br>
   <button class="btn btn-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
 <!-- <= link_to("Back to list", '/students/index', :class => 'back link' ) %> -->
+</div>
