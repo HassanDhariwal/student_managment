@@ -1,16 +1,17 @@
 <h1>Sections#new</h1>
 
+
 <%= form_with :url => sections_path, :method => 'post', local: true do |f| %>
 
 
    <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
   </p>  
   
   <p>
     <%= f.label :student_range %><br>
-      <%= f.number_field :student_range, in: 1..60 %><!-- Set the range limit for the student_range field -->
+      <%= f.number_field :student_range, in: 1..60,required: true, class: 'form-control' %><!-- Set the range limit for the student_range field -->
   </p>
   <!-- <p>
     <= f.label :student_count%><br>

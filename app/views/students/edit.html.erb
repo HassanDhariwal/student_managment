@@ -5,19 +5,19 @@
   <%= form_with(model: @student,url: student_path(@student), :method => 'patch', local: true) do |f| %>
    <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
   </p>  
   <p>
     <%= f.label :age %><br>
-    <%= f.number_field :age, in: 1..61%>
+    <%= f.number_field :age, in: 1..61, required: true, class: 'form-control' %>
   </p>
   <p>
     <%= f.label :father_name %><br>
-    <%= f.text_field :father_name %>
+    <%= f.text_field :father_name, requried: true, class: "form-control"  %>
   </p>
   <p>
     <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
+    <%= f.telephone_field :phone_number, pattern: '[0-9]{11}', maxlength: 11, placeholder:"xxxx-xxxxxxx", class: 'form-control' %>
   </p>
   <p>
     <%= f.label :email %><br>
@@ -25,7 +25,7 @@
   </p>
   <p>
     <%= f.label :blood_group %><br>
-    <%= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), prompt: 'Select blood group'%>
+    <%= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), placeholder: 'Select blood group'%>
   </p>
   
   <p class="dropdown">
