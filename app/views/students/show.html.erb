@@ -30,9 +30,9 @@
 	</tr>
 	<tr>
 		<th>Date_of_Birth</th>
-         <td> <!-- here i cannot get issue   --> -->
+         <td> <!-- here i cannot get issue   --> 
         	<% if @student.date_of_birth.present? %>
-   			  <%= @student.date_of_birth.strftime("%d-%m-%y") %>
+   			  <%= @student.date_of_birth %>
   			<% else %>
               N/A
             <% end %>
