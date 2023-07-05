@@ -25,6 +25,24 @@
 		<td><%= @student.email %></td>
 	</tr>
 	<tr>
+		<th>Guardian_no</th>
+		<td><%= @student.guardian_no %></td>
+	</tr>
+	<tr>
+		<th>Date_of_Birth</th>
+         <td> <!-- here i cannot get issue   --> -->
+        	<% if @student.date_of_birth.present? %>
+   			  <%= @student.date_of_birth.strftime("%d-%m-%y") %>
+  			<% else %>
+              N/A
+            <% end %>
+		</td>
+	</tr>
+	<tr>
+		<th>Gender</th>
+		<td><%= @student.gender %></td>
+	</tr>
+  	<tr>
 		<th>Blood_group</th>
 		<td><%= @student.blood_group %></td>
 	</tr>
@@ -35,7 +53,7 @@
 <table>
 	<tr>
 		<th>Secotion ID</th>
-		<td><%= @student.section_id %></td>
+		<td><%= @student.name %></td>
 	</tr>
 	<tr>
 		<th>Secotion name</th>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230613032212) do
+ActiveRecord::Schema.define(version: 20230705112634) do
 
   create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20230613032212) do
     t.string "email"
     t.string "blood_group"
     t.bigint "section_id"
+    t.string "gender"
+    t.string "guardian_no"
+    t.date "date_of_birth"
     t.index ["section_id"], name: "index_students_on_section_id"
   end
 
