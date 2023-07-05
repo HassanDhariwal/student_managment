@@ -23,6 +23,18 @@
     <%= f.label :email %><br>
     <%= f.email_field :email %>
   </p>
+  <p class="form-group">
+    <%= f.label :guardian_no %><br>
+    <%= f.telephone_field :guardian_no %>
+  <p>
+  <p class="form-group">
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth, { order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year } %>
+  </p>
+  <p class="form-group">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, options_for_select(['Male', 'Female'])%>
+  </p>
   <p>
     <%= f.label :blood_group %><br>
     <%= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), placeholder: 'Select blood group'%>

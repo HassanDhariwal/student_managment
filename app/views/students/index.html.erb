@@ -4,10 +4,10 @@
 
 <style>
   .table td{
-    padding-right: 5px; /* Adjust the desired amount of space */
+    padding-right: 2px; /* Adjust the desired amount of space */
   }
   .table th {
-    padding-right: 40px; /* Adjust the desired amount of space */
+    padding-right: 10px; /* Adjust the desired amount of space */
   }
   table, th, td {
   border: 2px solid black;
@@ -36,6 +36,9 @@
     		<th>Father_name</th>
    			<th>Phone_number</th>
     		<th>Email</th>
+        <th>Guardian_no</th>
+        <th>date_of_birth</th>
+        <th>Gender</th>
     		<th>Blood_group</th>
     		<th>Section id</th>
     		<th>Show</th>	
@@ -66,7 +69,10 @@
               No phone number provided
             <% end %>
           </td>
-   				<td><%= student.email %></td> 
+   				<td><%= student.email %></td>
+          <td><%= student.guardian_no %></td>
+          <td><%= student.date_of_birth %></td>
+          <td><%= student.gender %></td> 
     			<td><% if /(A\+|A\-|B\+|B\-|AB\+|AB\-|O\+|O\-)/.match?(student.blood_group) %>
             <%= student.blood_group %>
             <% else %>
@@ -74,11 +80,9 @@
               alert("enter a correct blood group like A+")
             </script>
             invalid blood group
-            <% end %>
-
-              
-            </td>
-    			<td><%= student.section&.id %></td>
+            <% end %> 
+          </td>
+    			<td><%= student.section&.name %></td>
 
     			<td class="actions">
     			<!-- <= link_to("Show", '/students', :class => 'action show' ) %> -->

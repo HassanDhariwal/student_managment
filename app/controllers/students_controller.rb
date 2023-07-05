@@ -18,18 +18,20 @@ class StudentsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    @student = Student.new( 
-      name: params[:name],
-      age: params[:age], 
-      father_name: params[:father_name], 
-      phone_number: params[:phone_number],
-      email: params[:email],
-      blood_group: params[:blood_group],
-      section_id: params[:section_id]
-     )
-
-
+     # binding.pry
+      @student = Student.new(
+       #here name: is key and params is object params[:name] would retrun the value  
+        name: params[:name],
+        age: params[:age], 
+        father_name: params[:father_name], 
+        phone_number: params[:phone_number],
+        email: params[:email],
+        guardian_no: params[:guardian_no],
+        gender: params[:gender], 
+        date_of_birth: params[:date_of_birth],
+        blood_group: params[:blood_group],
+        section_id: params[:section_id]
+       )
 
     if @student.save
       redirect_to (students_index_path)
@@ -48,6 +50,9 @@ class StudentsController < ApplicationController
       father_name: params[:student][:father_name], 
       phone_number: params[:student][:phone_number],
       email: params[:student][:email],
+      guardian_no: params[:student][:guardian_no],
+      date_of_birth: params[:student][:date_of_birth],
+      gender: params[:student][:gender],
       blood_group: params[:student][:blood_group],
       section_id: params[:student][:section_id]
       )
