@@ -1,0 +1,43 @@
+<br>
+<table summary="students detail view">
+	
+  	<tr>
+		<th>Name</th>
+		<td><%= @teacher.name %></td>    		
+	</tr>
+	<tr>	
+		<th>Phone_number</th>
+		<td><%= @teacher.phone_number %></td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td><%= @teacher.email %></td>
+	</tr>
+	<tr>
+		<th>Gender</th>
+		<td><%= @teacher.gender %></td>
+	</tr>
+	<tr>
+		<th>Address</th>
+		<td><%= @teacher.address %></td>
+	</tr>
+	<tr>
+		<th>Date_of_Birth</th>
+         <td> <!-- here i cannot get issue   --> 
+        	<% if @teacher.date_of_birth.present? %>
+   			  <%= @teacher.date_of_birth %>
+  			<% else %>
+              N/A
+            <% end %>
+		</td>
+	</tr>
+  	<tr>
+		<th>Qualification</th>
+		<td><%= @teacher.qualification %></td>
+	</tr>
+	<tr>
+		<th>Subject</th>
+		<td><%= @teacher.subject %></td>
+	</tr>
+</table>
+<button class="btn btn-primary" onclick="location.href='<%= teachers_path %>'" role="button"> Back to list </button>

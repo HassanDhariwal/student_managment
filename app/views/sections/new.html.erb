@@ -4,10 +4,11 @@
 <%= form_with :url => sections_path, :method => 'post', local: true do |f| %>
 
 
-   <p>
+<div>
+   <div>
     <%= f.label :name %><br>
     <%= f.text_field :name, required: true, class: 'form-control' %>
-  </p>  
+  </div>  
   
   <p>
     <%= f.label :student_range %><br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230705112634) do
+ActiveRecord::Schema.define(version: 20230723203316) do
 
   create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20230705112634) do
     t.string "guardian_no"
     t.date "date_of_birth"
     t.index ["section_id"], name: "index_students_on_section_id"
+  end
+
+  create_table "teachers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
+    t.string "name"
+    t.text "phone_number", limit: 16777215
+    t.string "email"
+    t.string "gender"
+    t.string "address"
+    t.string "qualification"
+    t.string "subject"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date_of_birth"
   end
 
   add_foreign_key "students", "sections"
