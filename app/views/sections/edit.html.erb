@@ -5,18 +5,18 @@
 <h2>Update Student</h2>
 
   <%= form_with(model: @section,url: section_path(@section), :method => 'patch', local: true) do |f| %>
-   <p>
+   <div class="col-md-4">
     <%= f.label :section_name %><br>
     <%= f.text_field :name, required: true, class: 'form-control' %>
-  </p>  
-  <p>
+  </div>  
+  <div class="col-md-4">
     <%= f.label :student_range %><br>
     <%= f.number_field :student_range, in: 1..60, required: true, class: 'form-control' %>
-  </p>
-  <p>
-    <%= f.submit ('update student') %>
-  </p>
-<% end %>
+  </div><br>
+  <div>
+    <%= f.submit ('update student'), class: "btn btn-outline-success" %>
+  </div>
+<% end %><br>
 <button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
 
 

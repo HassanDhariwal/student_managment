@@ -5,27 +5,27 @@
 
 
 <div>
-   <div>
+   <div class="col-md-4">
     <%= f.label :name %><br>
     <%= f.text_field :name, required: true, class: 'form-control' %>
   </div>  
   
-  <p>
+  <div class="col-md-4">
     <%= f.label :student_range %><br>
       <%= f.number_field :student_range, in: 1..60,required: true, class: 'form-control' %><!-- Set the range limit for the student_range field -->
-  </p>
+  </div>
   <!-- <p>
     <= f.label :student_count%><br>
     < = f.number_field :student_count %>
   </p> -->
-  <p>
+  <div class="col-md-4">
     <%= f.label :choice_students%><br>
-    <%= f.select :student_id, options_for_select(Student.all.map { |s| [s.id] }) %>
-  </p>
+    <%= f.select :student_id, options_for_select(Student.all.map { |s| [s.id] }), class: 'form-control' %>
+  </div><br>
   <div class="form-button">
-    <%= f.submit ('create section') %>
+    <%= f.submit ('create section'), class: 'btn btn-outline-success' %>
   </div>
-<% end %>
-<button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
+<% end %><br>
+<button class="btn btn-outline-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
 <!-- <= link_to("Back to list", '/sections/index', :class => 'back link' ) %> -->
 

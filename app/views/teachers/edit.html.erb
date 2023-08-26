@@ -1,5 +1,5 @@
 edit.html.erb
-
+<form class="col-md-4">
 <div class="Teachers Edit">
 <h2>Update Student</h2>
 
@@ -16,17 +16,17 @@ edit.html.erb
 
 <div class="form-group">
 	<%= f.label :email %><br>
-	<%= f.email_field :email%>
+	<%= f.email_field :email, class:"form-control"%>
 </div>
 
 <div class="form-group">
     <%= f.label :gender %><br>
-    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender'%>
+    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender', class: "form-control"%>
 </div>
 
 <div class="form-group">
     <%= f.label :date_of_birth %><br>
-    <%= f.date_field :date_of_birth , placeholder: 'day-month-year' %>
+    <%= f.date_field :date_of_birth , placeholder: 'day-month-year' , class: "form-control" %>
 </div>
 
 <div class="form-group">
@@ -47,12 +47,16 @@ edit.html.erb
 
 <div class="form-group">
     <%= f.label :subject %><br>
-    <%= f.text_field :subject, placeholder: "Teach Subject", maxlength: 10 %>
+    <%= f.text_field :subject, placeholder: "Teach Subject", maxlength: 10,class:"form-control" %>
 </div>
-
+<br>
 <div class="form-button">
-    <%= f.submit ('create teacher') %>
+    <%= f.submit ('create teacher') ,class:"btn btn-outline-success" %>
+    |
+    <%= link_to 'BACK TO LIST', teachers_path, class: "btn btn-outline-primary" %>
+
 </div>
 <% end %>
-<button class="btn btn-primary" onclick="location.href='<%= teacher_path %>'" role="button"> Back to list </button>
 
+</div>
+</form>
