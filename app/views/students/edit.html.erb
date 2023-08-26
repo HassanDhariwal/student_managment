@@ -1,7 +1,7 @@
 
 <div class="students Edit">
 <h2>Update Student</h2>
-
+<form class="col-md-4">
   <%= form_with(model: @student,url: student_path(@student), :method => 'patch', local: true) do |f| %>
    <p>
     <%= f.label :name %><br>
@@ -21,19 +21,19 @@
   </p>
   <p>
     <%= f.label :email %><br>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class:"form-control" %>
   </p>
   <p class="form-group">
     <%= f.label :guardian_no %><br>
-    <%= f.telephone_field :guardian_no %>
+    <%= f.telephone_field :guardian_no, class:"form-control" %>
   <p>
   <p class="form-group">
     <%= f.label :date_of_birth %><br>
-    <%= f.date_field :date_of_birth, order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year %>
+    <%= f.date_field :date_of_birth, order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year, class:"form-control" %>
   </p>
   <p class="form-group">
     <%= f.label :gender %><br>
-    <%= f.select :gender, options_for_select(['Male', 'Female'])%>
+    <%= f.select :gender, options_for_select(['Male', 'Female']), class:"form-control"%>
   </p>
   <p>
     <%= f.label :blood_group %><br>
@@ -42,11 +42,12 @@
   
   <p class="dropdown">
     <%= f.label :section_name %><br>
-    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }) %>
+    <%= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }),class:"form-control" %>
   </p>
   <p>
-    <%= f.submit ('update student') %>
+    <%= f.submit ('update student'), class: "btn btn-outline-success" %>
+    |
+    <%= link_to 'BACK TO LIST',students_path, class: "btn btn-outline-primary" %>
   </p>
 <% end %>
-<button class="btn btn-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
-
+</form>
