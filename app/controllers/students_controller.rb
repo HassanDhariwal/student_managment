@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
         age: params[:age], 
         father_name: params[:father_name], 
         phone_number: params[:phone_number],
-        email: params[:email],
+          email: params[:email],
         guardian_no: params[:guardian_no],
         gender: params[:gender], 
         date_of_birth: params[:date_of_birth],
