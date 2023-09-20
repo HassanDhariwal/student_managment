@@ -2,7 +2,7 @@
 <%= form_with :url => students_path, :method => 'post', local: true do |f| %>
 
 
-   <div class="col-md-4"> 
+   <div class="col-md-4">
     <%= f.label :name %><br>
     <%= f.text_field :name, required: true, class: 'form-control',placeholder:"Enter a Name" %>
   </div>  
@@ -30,11 +30,11 @@
   </div>
   <div class="col-md-4">
     <%= f.label :date_of_birth %><br>
-    <%= f.date_field :date_of_birth, order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year, class:"form-control" %>
+    <%= f.date_field :date_of_birth, order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year, class: "form-control" %>
   </div>
   <div class="col-md-4">
     <%= f.label :gender %><br>
-    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender', class:"form-control"%>
+    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender', class: "form-control"%>
   </div>
   <div class="col-md-4">
     <%= f.label :blood_group %><br>
