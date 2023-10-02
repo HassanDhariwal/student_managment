@@ -1,63 +1,80 @@
-<h1>New Teachers</h1>
-<div class="form-container-fluid">
-<%= form_with :url => teachers_path, :method => 'post', local: true do |f| %>
-    
-<div class="col-md-4"> 
-    <%= f.label :name %><br>
-    <%= f.text_field :name, required: true,placeholder: 'NAME', class: 'form-control' %>
+<div class="h3 border-bottom border-success my-4 d-flex justify-content-center">
+	New Teachers
 </div>
 
-<div class="col-md-4">
-    <%= f.label :phone_number,'Phone Number', class: 'control-label' %><br>
-    <%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 12, placeholder: 'xxxx-xxxxxx', class: 'form-control' %>
-</div>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="col-md-4">
-	<%= f.label :email %><br>
-    <%= f.email_field :email, class: "form-control" %>
+<div class=" container  justify-content-center border border-info my-4 shadow p-3 mb-5 bg-success-subtle   ">
+	<div  class="d-flex justify-content-end ">
+		<%= link_to teachers_path, class: "btn btn-outline-primary border-warning" do %>
+			<i class="bi bi-x"></i>
+		<%end%>
+	</div>
 
-</div>
 
-<div class="col-md-4">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender', class: "form-control"%>
-</div>
+	<%= form_with :url => teachers_path, :method => 'post', local: true do |f| %>
+		<div class="row">
+			<div class="col">
+    		<%= f.label :name %><br>
+    		<%= f.text_field :name, required: true,placeholder: 'NAME', class: 'form-control border-warning ' %>
+			</div>
 
-<div class="col-md-4">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_field :date_of_birth , placeholder: 'day-month-year', class: "form-control" %>
-</div>
+			<div class="col">
+    			<%= f.label :phone_number,'Phone Number', class: 'control-label' %><br>
+    			<%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 12, placeholder: 'xxxx-xxxxxx', class: 'form-control border-warning' %>
+			</div>
+		</div>
 
-<div class="col-md-4">
-    <%= f.label :address %><br>
-    <%= f.text_field :address , class: 'form-control' %>
-</div>
+		<div class="row">
+			<div class="col">
+				<%= f.label :email %><br>
+    			<%= f.email_field :email, class: "form-control border-warning" %>
+			</div>
+			<div class="col">
+    			<%= f.label :gender %><br>
+    			<%= f.select :gender, (['Male', 'Female']), {prompt: 'Select Gender'}, {class: "form-select border-warning"}%>
+			</div>
+		</div>
 
-<div class="col-md-4">
-  <%= f.label :qualification %><br>
-  <%= f.select :qualification, options_for_select([ 'Matriculation',
-    'Intermediate',
-    'Bachelor\'s Degree',
-    'Master\'s Degree',
-    'Doctorate',
-    'Diploma',
-    'Professional Degree'], selected: nil), prompt: 'Select Qualification', class: 'form-control' %>
-</div>
+		<div class="row">
+			<div class="col">
+    			<%= f.label :date_of_birth %><br>
+    			<%= f.date_field :date_of_birth , placeholder: 'day-month-year', class: "form-control border-warning" %>
+			</div>
 
-<div class="col-md-4">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject, placeholder: "Teach Subject", class: 'form-control' ,maxlength: 10 %>
-</div>
-<br>
-<div class="form-button">
-    <%= f.submit ('create teacher') , class: "btn btn-outline-success" %> |
-    <%= link_to 'BACK TO LIST',teachers_path, class: "btn btn-outline-primary" %>
-</div>
+			<div class="col">
+    			<%= f.label :address %><br>
+    			<%= f.text_field :address , class: 'form-control border-warning' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+  			<%= f.label :qualification %><br>
+  			<%= f.select :qualification,([ 'Matriculation',
+    			'Intermediate',
+    			'Bachelor\'s Degree',
+    			'Master\'s Degree',
+    			'Doctorate',
+    			'Diploma',
+    			'Professional Degree']), {prompt: 'Select Qualification'}, {class: 'form-select border-warning' }%>
+			</div>
+
+			<div class="col mb-3">
+    			<%= f.label :subject %><br>
+    			<%= f.text_field :subject, placeholder: "Teach Subject", class: 'form-control border-warning' ,maxlength: 10 %>
+			</div>
+		</div>
+
+		<div class="container  d-flex justify-content-center">
+    	<%= f.submit ('create teacher') , class: "btn btn-outline-success  col-3  border-warning" %>
+
+		</div>
 
 <% end %>
-
-
 </div>
+
+
 
 <!-- </form>
 <style>

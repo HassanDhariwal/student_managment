@@ -13,90 +13,91 @@
  *= require_tree .
  *= require_self
  */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-image: url(Rick.jpeg);
-    background-size: cover;
-    /*	background-position:center;*/
-    background-repeat: no-repeat;
-    min-height: 100vh; /* Set a minimum height to cover the entire viewport height */
-    margin: 0; /* Remove default body margin */
-}
 
-.menu-bar{
-    /*	background-color: rgb(0,100,0);*/
-    text-align: center;
-}
-.menu-bar ul{
-    display: inline-flex;
-    list-style: none;
-    color: white;
-}
-.menu-bar ul li{
-    width: 120px;
-    margin: 10px;
-    padding: 15px ;
+/*table.table.table-bordered, th, td.action {*/
 
-}
-.menu-bar ul li a{
-    text-decoration: none;
-    color: white;
-}
-.active, .menu-bar ul li:hover{
-    background-color: darkseagreen;
-    border-radius: 35px;
-    animation: shake 200ms 2;
+/*}*/
+/*@keyframes shake {*/
+/*    !*its used for shake a button*!*/
+/*    0%, 100% {translate: 0}*/
+/*    25% {translate: 0.125rem;}*/
+/*    75% {translate: -0.125rem;}*/
+/*}*/
 
-}
-span{
-    float: right;
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    transition: background-size 0.3s; /* Add a transition effect to background-size */
-    /*border-radius: 10px;*/
-    padding: 10px 20px; /* Add padding to the button */
+/*div.col-md-4{*/
+/*    color: white;*/
+/*}*/
+/*div.form-container-fluid{*/
+/*    !*its used to Adjust a form size & absolute   width: 90%;*!*/
+/*    !*width: 90%;*!*/
+/*    !*max-width: 450%;*!*/
+/*    !*position: absolute;*!*/
+/*    !*top: 20%;*!*/
+/*    !*left: 40%;*!*/
+/*}*/
+/*table.summary, tr,td,th{*/
+/*    color: white;*/
+/*    padding: 10px 15px;*/
+/*}*/
+/*!*    !*background-size: 110% 110%; !* Increase the background size on hover *!*!*!*/
+/**{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*body{*/
+/*    background-image: url(Rick.jpeg);*/
+/*    background-size: cover;*/
+/*    !*	background-position:center;*!*/
+/*    background-repeat: no-repeat;*/
+/*    min-height: 100vh; !* Set a minimum height to cover the entire viewport height *!*/
+/*    margin: 0; !* Remove default body margin *!*/
 
-}
-span:hover{
-    /*background-color: darkseagreen;*/
-    border-radius: 10px;
-    animation: shake 200ms 2;
-    /*background-size: 110% 110%; !* Increase the background size on hover *!*/
-}
+/*}*/
+/*.menu-bar{*/
+/*    !*	background-color: rgb(0,100,0);*!*/
+/*    text-align: center;*/
+/*}*/
+/*.menu-bar ul{*/
+/*    display: inline-flex;*/
+/*    list-style: none;*/
+/*    color: white;*/
+/*}*/
+/*.menu-bar ul li{*/
+/*    width: 120px;*/
+/*    margin: 10px;*/
+
+/*    padding: 15px ;*/
+/*}*/
+/*.menu-bar ul li a{*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*}*/
+/*.active, .menu-bar ul li:hover{*/
+/*    background-color: darkseagreen;*/
+/*    border-radius: 35px;*/
+
+/*    animation: shake 200ms 2;*/
+/*}*/
+/*span{*/
+/*    float: right;*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*    font-size: 25px;*/
+/*    transition: background-size 0.3s; !* Add a transition effect to background-size *!*/
+/*    !*border-radius: 10px;*!*/
+
+/*    padding: 10px 20px; !* Add padding to the button *!*/
+/*}*/
+/*span:hover{*/
+/*    !*background-color: darkseagreen;*!*/
+/*    border-radius: 10px;*/
+/*    animation: shake 200ms 2;*/
 
 
 
 
-table.table.table-bordered, th, td.action {
-
-}
-@keyframes shake {
-    /*its used for shake a button*/
-    0%, 100% {translate: 0}
-    25% {translate: 0.125rem;}
-    75% {translate: -0.125rem;}
-}
-
-div.col-md-4{
-    color: white;
-}
-div.form-container-fluid{
-    /*its used to Adjust a form size & absolute   width: 90%;*/
-    /*width: 90%;*/
-    /*max-width: 450%;*/
-    /*position: absolute;*/
-    /*top: 20%;*/
-    /*left: 40%;*/
-}
-table.summary, tr,td,th{
-    color: white;
-    padding: 10px 15px;
-}
+/*}*/
 
 
 

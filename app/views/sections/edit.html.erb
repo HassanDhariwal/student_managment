@@ -1,22 +1,32 @@
-<h1>Sections#edit</h1>
-<p>Find me in app/views/sections/edit.html.erb</p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="students Edit">
-<h2>Update Student</h2>
+<div class="container my-4 h-3 d-flex justify-content-center text-dark-emphasis  border-b  border-danger-subtle ">
+ Update Student
+</div>
+  <div class="container border border-info my-4 shadow p-3 mb-5 bg-danger-subtle  ">
+    <div class="d-flex  justify-content-end">
+      <%= link_to  sections_path,  class: "btn btn-outline-primary " do %>
+        <i class="bi bi-x"></i>
+      <% end %>
+    </div>
 
-  <%= form_with(model: @section,url: section_path(@section), :method => 'patch', local: true) do |f| %>
-   <div class="col-md-4">
-    <%= f.label :section_name %><br>
-    <%= f.text_field :name, required: true, class: 'form-control' %>
-  </div>  
-  <div class="col-md-4">
-    <%= f.label :student_range %><br>
-    <%= f.number_field :student_range, in: 1..60, required: true, class: 'form-control' %>
-  </div><br>
-  <div>
-    <%= f.submit ('update student'), class: "btn btn-outline-success" %>
-  </div>
+    <%= form_with(model: @section,url: section_path(@section), :method => 'patch', local: true) do |f| %>
+        <div class="col">
+          <%= f.label :section_name %><br>
+          <%= f.text_field :name, required: true, class: 'form-select border-danger' %>
+        </div>
+        <div class="col">
+          <%= f.label :student_range %><br>
+          <%= f.number_field :student_range, in: 1..60, required: true, class: 'form-select border-danger' %>
+        </div>
+        <div class="col">
+          <%= f.label :student_id, 'choose Student' %>
+          <%= f.collection_select :student_id, Student.all, :id, :name, { prompt: 'Select student_name' }, { class: 'form-select border-danger' } %>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+          <%= f.submit ('update student'), class: "btn btn-outline-danger  col-3 max-auto " %>
+        </div>
 <% end %><br>
-<button class="btn btn-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
-
+  </div>
 
