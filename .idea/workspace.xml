@@ -323,4 +323,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="resolve conficts" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve conficts" />
+  </component>
 </project>
