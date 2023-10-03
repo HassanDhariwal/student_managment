@@ -6,14 +6,14 @@ class StudentsController < ApplicationController
   def search
       # app/controllers/students_controller.rb
           query = params[:query]
-      @students = Student.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
+      @students = Student.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ? ",
                                 "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
 
-      @sections = Section.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
-                                "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
+      @sections = Section.where("name LIKE ? OR student_range LIKE ? ",
+                                "%#{query}%","%#{query}%")
 
-      @teachers = Teacher.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
-                                "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
+      @teachers = Teacher.where("name LIKE ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ?  OR address	 LIKE ? OR qualification LIKE ? OR subject LIKE ?",
+                                "%#{query}%", "%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%" ,"%#{query}%","%#{query}%","%#{query}%")
     end
 
   def show
