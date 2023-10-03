@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry', '~> 0.13.1'
+gem 'ap', '~> 0.1.1'
+gem 'binding.repl', '~> 3.0'
 
 gem 'loofah', '~> 2.21', '>= 2.21.3'
 # gem 'nokogiri', '~> 1.15', '>= 1.15.4'

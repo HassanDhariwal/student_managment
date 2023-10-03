@@ -26,17 +26,20 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find_by_id(params[:id])
+    @student = Student.last
+
   end
 
   def update
+    # binding.pry
       @section = Section.find_by_id(params[:id])
-
       if @section.update(
         name: params[:section][:name],
         student_range: params[:section][:student_range], 
         )
         redirect_to @section
       else
+
         flash[:error] = "Section not found."
         render 'edit'
       end

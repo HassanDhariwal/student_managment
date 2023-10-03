@@ -1,69 +1,74 @@
 
-<div class="students show">
-<h2>Show Student</h2>
+<div class="h3  my-4 d-flex justify-content-center  border-success-subtle border-bottom">
+	Student Show
+</div>
+<div class=" container justify-content-canter align-middle border border-4  shadow p-3 mb-5 border border-success-subtle my-4 ">
+	<div class="d-flex my-2  justify-content-end">
+		<%= link_to  students_path,  class: "btn btn-outline-primary" do %>
+			<i class="bi bi-x"></i>
+		<% end %>
+	</div>
 
-<table summary="students detail view">
-	
-  	<tr>
-		<th>Name</th>
-		<td><%= @student.name %></td>    		
-	</tr>
-	<tr>
-		<th>Age</th>
-		<td><%= @student.age %></td>
-	</tr>
-	<tr>
-		<th>Father_name</th>
-		<td><%= @student.father_name %></td>
-	</tr>
-	<tr>	
-		<th>Phone_number</th>
-		<td><%= @student.phone_number %></td>
-	</tr>
-	<tr>
-		<th>Email</th>
-		<td><%= @student.email %></td>
-	</tr>
-	<tr>
-		<th>Guardian_no</th>
-		<td><%= @student.guardian_no %></td>
-	</tr>
-	<tr>
-		<th>Date_of_Birth</th>
-         <td> <!-- here i cannot get issue   --> 
-        	<% if @student.date_of_birth.present? %>
-   			  <%= @student.date_of_birth %>
-  			<% else %>
-              N/A
-            <% end %>
-		</td>
-	</tr>
-	<tr>
-		<th>Gender</th>
-		<td><%= @student.gender %></td>
-	</tr>
-  	<tr>
-		<th>Blood_group</th>
-		<td><%= @student.blood_group %></td>
-	</tr>
-</table>
-<button class="btn btn btn-outline-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
-<br>
-<h1>Section detail</h1>
-<table>
-	<tr>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<table class="container align-middle  ">
+		<th class=" d-flex  justify-content-center h3 text-success">Show Student</th>
+		<tr class="border-bottom border-success">
+		  <th>Name</th>
+		  <td><%= @student.name %></td>
+		</tr>
+	  <tr class="border-bottom border-success">
+		  <th>Age</th>
+		 <td><%= @student.age %></td>
+		</tr>
+	 <tr class="border-bottom border-success">
+		 <th>Father_name</th>
+		 <td><%= @student.father_name %></td>
+	 </tr>
+	 <tr class="border-bottom border-success">
+		 <th>Phone_number</th>
+		 <td><%= @student.phone_number %></td>
+	 </tr>
+	 <tr class="border-bottom border-success">
+		 <th>Email</th>
+		 <td><%= @student.email %></td>
+	 </tr>
+	 <tr class="border-bottom border-success">
+		 <th>Guardian_no</th>
+		 <td><%= @student.guardian_no %></td>
+	 </tr>
+	 <tr class="border-bottom border-success">
+		 <th>Date_of_Birth</th>
+		 	<td> <!-- here i cannot get issue   -->
+				<% if @student.date_of_birth.present? %>
+					<%= @student.date_of_birth %>
+				<% else %>
+					N/A
+				<% end %>
+			</td>
+	 </tr>
+	 <tr class="border-bottom border-success">
+		 <th>Gender</th>
+		 <td><%= @student.gender %></td>
+	 </tr>
+  	 <tr class="border-bottom border-success">
+		 <th>Blood_group</th>
+		 <td><%= @student.blood_group %></td>
+	 </tr>
+<th class="  my-3 d-flex justify-content-center h3 text-success">Section detail</th>
+	<tr class="border-bottom border-success">
 		<th>Secotion ID</th>
 		<td><%= @student.name %></td>
 	</tr>
-	<tr>
+	<tr class="border-bottom border-success">
 		<th>Secotion name</th>
 		<td><%= @student.section&.name %></td>
 	</tr>
-	<tr>
+	<tr class="border-bottom border-success">
 		<th>Student limits</th>
 		<td><%= @student.section&.student_range %></td>
 	</tr>
 </table>
+	<br>
 </div>
-<button class="btn btn-outline-primary" onclick="location.href='<%= students_path %>'" role="button"> Back to list </button>
 <!-- <= link_to("Back to list", '/students/index', :class => 'form-button' ) %> -->

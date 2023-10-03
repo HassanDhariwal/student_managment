@@ -1,33 +1,41 @@
-<h1>Sections#new</h1>
+<div  class="container my-4 h3 d-flex justify-content-center text-dark-emphasis border-bottom border-danger-subtle ">
+ New Section
+</div>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container border border-info my-4 shadow p-3 mb-5 bg-danger-subtle  ">
+  <div class="d-flex justify-content-end">
+    <!-- 1st way   <button class="btn btn-outline-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>-->
+    <!-- 2nd way <= link_to("Back to list", '/sections/index', :class => 'back link' ) %> -->
+    <!-- 3rd way-->
+    <%= link_to  sections_path,  class: "btn btn-outline-primary " do %>
+      <i class="bi bi-x"></i>
+    <% end %>
+  </div>
 
 <%= form_with :url => sections_path, :method => 'post', local: true do |f| %>
-
-
-<div class="form-container-fluid  ">
-  <form>
-   <div class="col-md-4">
+   <div class="col">
     <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, class: 'form-control' %>
+    <%= f.text_field :name, required: true, class: 'form-select border-danger' %>
   </div>
-  
-  <div class="col-md-4">
+  <div class="col">
     <%= f.label :student_range %><br>
-      <%= f.number_field :student_range, in: 1..60,required: true, class: 'form-control' %><!-- Set the range limit for the student_range field -->
+      <%= f.number_field :student_range, in: 1..60,required: true, class: 'form-select border-danger' %><!-- Set the range limit for the student_range field -->
   </div>
   <!-- <p>
     <= f.label :student_count%><br>
     < = f.number_field :student_count %>
   </p> -->
-  <div class="col-md-4">
-    <%= f.label :choice_students%><br>
-    <%= f.select :student_id, options_for_select(Student.all.map { |s| [s.id] }), class: 'form-control' %>
+<!--  <div class="col">-->
+<!--    <%#= f.label :choice_students%><br>-->
+    <%#= f.select :student_id, options_for_select(Student.all.map { |s| [s.id] }), class: 'form-select border-success' %>
+<!--  </div>-->
+  <div class="col">
+    <%= f.label :student_id, 'choose Student' %>
+    <%= f.collection_select :student_id, Student.all, :id, :name, { prompt: 'Select student_name' }, { class: 'form-select border-danger' } %>
   </div><br>
   <div class="form-button">
-    <%= f.submit ('create section'), class: 'btn btn-outline-success' %>
+    <%= f.submit ('create section'), class: 'btn btn-outline-danger d-grid gap-2 col-3 mx-auto' %>
   </div>
-<% end %><br>
-<button class="btn btn-outline-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
-<!-- <= link_to("Back to list", '/sections/index', :class => 'back link' ) %> -->
-</form>
+<% end %>
 </div>

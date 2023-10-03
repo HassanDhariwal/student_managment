@@ -1,62 +1,74 @@
-edit.html.erb
-<form class="col-md-4">
-<div class="Teachers Edit">
-<h2>Update Student</h2>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class=" h3 my-4 d-flex justify-content-center border-bottom  border-warning-subtle">
+Update Student
+</div>
 
+	<div  class=" container justify-content-canter align-middle border border-info my-4  shadow p-3 mb-5 bg-success-subtle">
   <%= form_with(model: @teacher,url: teacher_path(@teacher), :method => 'patch', local: true) do |f| %>
-   <div class="form-group"> 
+<div class="container d-flex justify-content-end">
+	<%= link_to  teachers_path, class: "btn btn-outline-primary" do %>
+	<i class="bi bi-x"></i>
+	<%end %>
+</div>
+		<div class="row mb-3">
+   <div class="col">
     <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, class: 'form-control' %>
+    <%= f.text_field :name, required: true, class: 'form-control border-warning' %>
 </div>
 
-<div class="form-group">
+<div class="col">
     <%= f.label :phone_number,'Phone Number', class: 'control-label' %><br>
-    <%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 12, placeholder: 'xxxx-xxxxxx', class: 'form-control' %>
+    <%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 12, placeholder: 'xxxx-xxxxxx', class: 'form-control border-warning' %>
 </div>
+		</div>
 
-<div class="form-group">
+		<div class="row">
+
+<div class="col mb-3">
 	<%= f.label :email %><br>
-	<%= f.email_field :email, class:"form-control"%>
+	<%= f.email_field :email, class: "form-control border-warning"%>
 </div>
 
-<div class="form-group">
+<div class="col mb-3">
     <%= f.label :gender %><br>
-    <%= f.select :gender, options_for_select(['Male', 'Female']), prompt: 'Select Gender', class: "form-control"%>
+    <%= f.select :gender, (['Male', 'Female']), {prompt: 'Select Gender'}, {class: "form-select border-warning"}%>
 </div>
+		</div>
 
-<div class="form-group">
+		<div class="row mb-3">
+<div class="col">
     <%= f.label :date_of_birth %><br>
-    <%= f.date_field :date_of_birth , placeholder: 'day-month-year' , class: "form-control" %>
+    <%= f.date_field :date_of_birth , placeholder: 'day-month-year' , class: "form-control border-warning" %>
 </div>
 
-<div class="form-group">
+<div class="col">
     <%= f.label :address %><br>
-    <%= f.text_field :address , class: 'form-control' %>
+    <%= f.text_field :address , class: 'form-control border-warning' %>
 </div>
+		</div>
 
-<div class="form-group">
+		<div class="row">
+<div class="col">
   <%= f.label :qualification %><br>
-  <%= f.select :qualification, options_for_select([ 'Matriculation',
+  <%= f.select :qualification,([ 'Matriculation',
     'Intermediate',
     'Bachelor\'s Degree',
     'Master\'s Degree',
     'Doctorate',
     'Diploma',
-    'Professional Degree'], selected: nil), prompt: 'Select Qualification', class: 'form-control' %>
+    'Professional Degree']),{ prompt: 'Select Qualification'}, {class: 'form-select border-warning '} %>
 </div>
 
-<div class="form-group">
+<div class="col">
     <%= f.label :subject %><br>
-    <%= f.text_field :subject, placeholder: "Teach Subject", maxlength: 10,class:"form-control" %>
+    <%= f.text_field :subject, placeholder: "Teach Subject", maxlength: 10,class: "form-control border-warning" %>
 </div>
+		</div>
 <br>
 <div class="form-button">
-    <%= f.submit ('create teacher') ,class:"btn btn-outline-success" %>
-    |
-    <%= link_to 'BACK TO LIST', teachers_path, class: "btn btn-outline-primary" %>
-
+    <%= f.submit ('create teacher') ,class: "btn btn-outline-success d-grid col-3   mx-auto border-warning" %>
 </div>
 <% end %>
 
 </div>
-</form>
+</div>
