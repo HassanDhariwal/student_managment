@@ -1,0 +1,44 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="d-flex justify-content-end my-4">
+  <div  class="container  h3 d-flex justify-content-center  border-bottom border-primary-subtle ">
+    Search Results for Query: "<%= params[:query] %>"
+  </div>
+</div>
+
+<div class="table-responsive-sm my-4">
+  <table class="table align-middle bg-danger-subtle  border border-4  shadow p-3 mb-5 border-primary-subtle ">
+    <thead class="table-dark ">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Father</th>
+      <th>Phone_number</th>
+      <th>Email</th>
+      <th>Guardian</th>
+      <th>date_of_birth</th>
+      <th>Gender</th>
+      <th>Blood_group</th>
+      <th>Section</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |student|%>
+      <tr>
+        <td class="text-secondary"><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.age %></td>
+        <td><%= student.father_name %></td>
+        <td><%= student.phone_number %></td>
+        <td><%= student.email %></td>
+        <td><%= student.guardian_no %></td>
+        <td><%= student.date_of_birth&.strftime('%d-%m-%Y') %></td>
+        <td><%= student.gender %></td>
+        <td><%= student.blood_group %></td>
+        <td><%= student.section.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

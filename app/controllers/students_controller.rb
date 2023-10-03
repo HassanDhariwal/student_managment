@@ -3,6 +3,18 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
   end
+  def search
+      # app/controllers/students_controller.rb
+          query = params[:query]
+      @students = Student.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
+                                "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
+
+      @sections = Section.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
+                                "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
+
+      @teachers = Teacher.where("name LIKE ? OR age = ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ? OR blood_group LIKE ?",
+                                "%#{query}%", query.to_i, "%#{query}%","%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%")
+    end
 
   def show
     @student = Student.find_by_id(params[:id])

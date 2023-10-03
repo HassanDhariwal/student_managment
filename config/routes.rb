@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
   get 'homes/index'
+  get 'search',to: "students#search"
   root "students#index"
   get "sections/index"
   get 'teachers/index'
-  resources :students
-  resources :sections
+  resources :students do
+    collection do
+      get 'search'
+    end
+  end
+
+    resources :sections
   resources :teachers
 end
   
