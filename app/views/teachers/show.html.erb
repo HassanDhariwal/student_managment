@@ -1,0 +1,59 @@
+
+	<div class=" my-4 d-flex  justify-content-center h3 border-bottom border-warning">Show Teacher</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class=" my-4 container bg-warning-subtle justify-content-canter align-middle border border-4  shadow p-3 mb-5 border border-success-subtle my-4">
+	<div class="d-flex my-2  justify-content-end">
+		<%= link_to  teachers_path,  class: "btn btn-outline-primary" do %>
+			<!--	<button class="btn btn-primary" onclick="location.href='<= teachers_path %>'" role="button"> Back to list </button>-->
+			<i class="bi bi-x"></i>
+		<% end %>
+	</div>
+
+
+	<table class="container align-middle" >
+
+		<tr class="border-bottom border-danger-subtle">
+		<th>Name</th>
+		<td><%= @teacher.name %></td>
+	</tr>
+
+	<tr class="border-bottom border-danger-subtle">
+		<th>Phone_number</th>
+		<td><%= @teacher.phone_number %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Email</th>
+		<td><%= @teacher.email %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Gender</th>
+		<td><%= @teacher.gender %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Address</th>
+		<td><%= @teacher.address %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle" >
+		<th>Date_of_Birth</th>
+		<td> <!-- here i cannot get issue   -->
+			<% if @teacher.date_of_birth.present? %>
+				<%= @teacher.date_of_birth %>
+			<% else %>
+				N/A
+			<% end %>
+		</td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Qualification</th>
+		<td><%= @teacher.qualification %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Subject</th>
+		<td><%= @teacher.subject %></td>
+	</tr>
+</table>
+<br>
+
+</div>

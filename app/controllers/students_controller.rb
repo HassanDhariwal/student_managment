@@ -2,79 +2,76 @@ class StudentsController < ApplicationController
   
   def index
     @students = Student.all
-    @s_classes =StudentClass.all
   end
 
   def show
-    # binding.pry
     @student = Student.find_by_id(params[:id])
   end
 
   def new
     # binding.pry
-    @student = Student.new({:name => 'Enter your name', :father_name => 'Enter your Father Name ', age:"18"})
+    @student = Student.new
   end   
 
-  def edit
-    @student = Student.find_by_id(params[:id])
-  end
 
   def create
-    # binding.pry
-    @student = Student.new( 
-      name: params[:name],
-      age: params[:age], 
-      father_name: params[:father_name], 
-      phone_number: params[:phone_number],
-      email: params[:email],
-      blood_group: params[:blood_group]
-     )
-
-    @s_classes = StudentClass.create(section_name: params[:section_name], teacher_name: params[:teacher_name], student_range: params[:student_range], grade: params[:grade])
-
+     # binding.pry
+      @student = Student.new(
+       #here name: is key and params is object params[:name] would retrun the value
+        name: params[:name],
+        age: params[:age],
+        father_name: params[:father_name],
+        phone_number: params[:phone_number],
+          email: params[:email],
+        guardian_no: params[:guardian_no],
+        gender: params[:gender],
+        date_of_birth: params[:date_of_birth],
+        blood_group: params[:blood_group],
+        section_id: params[:section_id]
+       )
 
     if @student.save
-      redirect_to (students_index_path)
+      redirect_to (students_path)
     else
       render('new')
-    end    
+    end
   end
-  
+
+  def edit
+    # binding.pry
+    @student = Student.find_by_id(params[:id])
+    # binding.pry
+    # binding.pry
+  end
+
   def update
-    # binding.pry 
+    # binding.pry
     @student = Student.find_by_id(params[:id])
 
     if @student.update(
       name: params[:student][:name],
-      age: params[:student][:age], 
-      father_name: params[:student][:father_name], 
+      age: params[:student][:age],
+      father_name: params[:student][:father_name],
       phone_number: params[:student][:phone_number],
       email: params[:student][:email],
-      blood_group: params[:student][:blood_group]
-      )
+      guardian_no: params[:student][:guardian_no],
+      date_of_birth: params[:student][:date_of_birth],
+      gender: params[:student][:gender],
+      blood_group: params[:student][:blood_group],
+      section_id: params[:student][:section_id],
+    )
       redirect_to @student
+      # binding.pry
     else
+      # binding.pry
       flash[:error] = "Student not found."
-      render 'edit'
+      render 'show'
     end
   end
 
   def destroy
     @student = Student.find_by_id(params[:id])
     @student.destroy
-    redirect_to (students_index_path)
-
-  end  
-
-  # StudentClass CRUD operations
-  
-  def student_class_index
-    @s_classes = StudentClass.all
+    redirect_to (students_path)
   end
-
-
-
-
-
-
 end

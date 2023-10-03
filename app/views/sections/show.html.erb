@@ -1,0 +1,67 @@
+<div class=" my-3 d-flex justify-content-center border-bottom  border-danger-subtle h3">
+	Sections show
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class=" container justify-content-canter bg-danger-subtle align-middle  border border-4  shadow p-3 mb-5 border border-danger my-4 ">
+		<div class="d-flex my-2  justify-content-end">
+			<%= link_to  sections_path,  class: "btn btn-outline-primary" do %>
+				<i class="bi bi-x"></i>
+			<% end %>
+		</div>
+<table class="container align-middle " >
+	<tr class="border-bottom border-danger-subtle">
+		<th>Name</th>
+		<td><%= @section.name %></td>
+	</tr>
+	<tr class="border-bottom border-danger-subtle">
+		<th>Student Range</th>
+		<td><%= @section.student_range %></td>
+	</tr>
+	<tr>
+		<th>Total Student in Section </th>
+		<td><%= @section.students.count %></td>
+	</tr>
+</table>
+</div>
+<div class=" my-3 d-flex justify-content-center border-bottom  border-danger-subtle h3">
+	Sections Students  show
+</div>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class=" container justify-content-canter bg-danger-subtle align-middle  border border-4  shadow p-3 mb-5 border border-danger my-4 ">
+	<div class="d-flex my-2  justify-content-end">
+		<%= link_to  sections_path,  class: "btn btn-outline-primary" do %>
+			<i class="bi bi-x"></i>
+		<% end %>
+	</div>
+	<table class="container align-middle " >
+		<tr class="border-bottom border-danger-subtle">
+			<th>Name</th>
+			<td><%= @section.name %></td>
+		</tr>
+		<tr class="border-bottom border-danger-subtle">
+			<th>Students Name</th>
+			<td>
+				<% @section.students.each do |student| %>
+					<%=@section.id %> <%= student.name %><br><!--according to section get students recode exist in sections-->
+				<% end %>
+			</td>
+		</tr>
+
+		<%# @section.each do |section|%>
+<!--		<tr>-->
+<!--			<th>Total Student in Section </th>-->
+<!--			<td><%#= section.students.name %></td>-->
+<!--		</tr>-->
+
+		<%# end %>
+
+	</table>
+</div>
+
+
+
+
+
+
+

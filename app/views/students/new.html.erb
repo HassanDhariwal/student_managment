@@ -1,51 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 
-<!-- <= form_with url: "/students", method: :post, local: true do |f| %> -->
-<%= form_with :url => students_path, :method => 'post', local: true do |f| %>
-  <!-- <= form_with(model: @student,url: "/students", method: :post, local: true) do |f| %> -->
+<div class="container d-flex justify-content-center h3 my-4  border-bottom border-success-subtle">
+  New Student
+</div>
 
-   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>  
-  <p>
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </p>
-  <p>
-    <%= f.label :father_name %><br>
-    <%= f.text_field :father_name %>
-  </p>
-  <p>
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :blood_group %><br>
-    <%= f.text_field :blood_group %>
-  </p>
-  <p>
-    <%= f.label :section_name %><br>
-    <%= f.text_field :section_name %>
-  </p>
-  <p>
-    <%= f.label :teacher_name %><br>
-    <%= f.text_field :teacher_name %>
-  </p>
-  <p>
-    <%= f.label :student_range %><br>
-    <%= f.number_field :student_range %>
-  </p>
-  <p>
-    <%= f.label :grade %><br>
-    <%= f.number_field :grade %>
-  </p>
-  
-  <div class="form-button">
-    <%= f.submit ('create student') %>
+
+<div class="container justify-content-canter border border-info my-4 shadow p-3 mb-5 bg-success-subtle  ">
+  <div class="d-flex justify-content-end">
+    <%= link_to  students_path,  class: "btn btn-outline-primary " do %>
+      <i class="bi bi-x"></i>
+    <% end %>
   </div>
+
+
+
+
+<%= form_with :url => students_path, :method => 'post', local: true do |f| %>
+
+    <div class="row">
+      <div class=" mb-3 col my-4">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, required: true, class: 'form-control border-success  border-success ',placeholder:"Enter a Name" %>
+      </div>
+      <div class="mb-3 col my-4">
+        <%= f.label :father_name %><br>
+        <%= f.text_field :father_name, class: 'form-control border-success',placeholder: "Enter a father_name" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="mb-3 col">
+        <%= f.label :phone_number,'Phone Number', class: 'control-label' %><br>
+        <%= f.text_field :phone_number, pattern: '[0-9]{11}', maxlength: 11, placeholder: 'xxxx-xxxxxx', class: 'form-control border-success' %>
+      </div>
+      <div class="mb-3 col">
+        <%= f.label :email %><br>
+        <%= f.email_field :email ,placeholder: "Enter a Email", class: "form-control border-success" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3 "  >
+        <%= f.label :age %><br>
+        <%= f.number_field :age, in: 1...61, required: true, class: 'form-control border-success',placeholder:"Enter a Age" %>
+      </div>
+      <div class="mb-3 col">
+        <%= f.label :guardian_number %><br>
+        <%= f.telephone_field :guardian_no, pattern: '[0-9]{11}', maxlength: 11, placeholder:"xxxx-xxxxxxx", class: 'form-control border-success' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3 ">
+        <%= f.label :date_of_birth %><br>
+        <%= f.date_field :date_of_birth, order: [:day, :month, :year], start_year: Date.today.year - 100, end_year: Date.today.year, class: "form-control border-success" %>
+      </div>
+      <div class="col mb-3">
+      <%= f.label :gender %>
+      <%= f.select :gender, ['Male', 'Female'], {prompt: 'Select Gender'}, {class: "form-select border-success"}%>
+    </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col ">
+        <%= f.label :blood_group, 'Blood Group' %>
+        <%= f.select :blood_group, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { prompt: 'Select blood group' }, { class: 'form-select border-success' } %>
+      </div>
+      <div class="col">
+        <%= f.label :section_id, 'Section Name' %>
+        <%= f.collection_select :section_id, Section.all, :id, :name, { prompt: 'Select section_name' }, { class: 'form-select border-success' } %>
+      </div>
+    </div>
+
+    <!--<div class="col">-->
+    <%#= f.label :blood_group %>
+    <%#= f.select :blood_group, options_for_select(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']), prompt: 'Select blood group', class: "form-select"%>
+
+    <!--<div class="col-md-4">-->
+    <%#= f.label :section_name %>
+    <%#= f.select :section_id, options_for_select(Section.all.map { |s| [s.name, s.id] }),prompt: 'Select section_name', class: "form-control" %>
+
+    <br>
+    <div class="form-button">
+      <%= f.submit ('create '),class: "btn btn btn-outline-success d-grid  col-3 mx-auto " %><!--d-grid it mean bootstrap grid -->
+    </div>
+    <br>
 <% end %>
-<%= link_to("Back to list", '/students/index', :class => 'back link' ) %>
+</div>
+</body>
+</html>
