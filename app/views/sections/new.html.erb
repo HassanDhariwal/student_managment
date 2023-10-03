@@ -4,11 +4,12 @@
 <%= form_with :url => sections_path, :method => 'post', local: true do |f| %>
 
 
-<div>
+<div class="form-container-fluid  ">
+  <form>
    <div class="col-md-4">
     <%= f.label :name %><br>
     <%= f.text_field :name, required: true, class: 'form-control' %>
-  </div>  
+  </div>
   
   <div class="col-md-4">
     <%= f.label :student_range %><br>
@@ -28,4 +29,5 @@
 <% end %><br>
 <button class="btn btn-outline-primary" onclick="location.href='<%= sections_path %>'" role="button"> Back to list </button>
 <!-- <= link_to("Back to list", '/sections/index', :class => 'back link' ) %> -->
-
+</form>
+</div>
