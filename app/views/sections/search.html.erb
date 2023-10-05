@@ -1,0 +1,33 @@
+
+<div class="d-flex justify-content-end my-4">
+  <div  class="container  h3 d-flex justify-content-center  border-bottom border-danger-subtle ">
+    Search Results for Sections Query: "<%= params[:query] %>"
+  </div>
+</div>
+<div class="table-responsive-sm my-4">
+  <div class="d-flex me-4 mb-2  justify-content-end">
+    <%= link_to  teachers_path,  class: "btn btn-outline-danger" do %>
+      <i class="bi bi-x"></i>
+    <% end %>
+  </div>
+  <table class="table align-middle bg-danger-subtle  border border-4  shadow p-3 mb-5 border-danger-subtle ">
+    <thead class="table-dark ">
+    <tr>
+      <th>ID</th>
+      <th>Sections</th>
+      <th>Students Range</th>
+      <th>Total students</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @sections.each do |section|%>
+      <tr>
+        <td class="text-secondary"><%= section.id %></td>
+        <td><%= section.name %></td>
+        <td><%= section.student_range %></td>
+        <td><%= section.students.count %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
