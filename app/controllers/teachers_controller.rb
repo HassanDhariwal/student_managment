@@ -3,7 +3,10 @@ class TeachersController < ApplicationController
     @teachers = Teacher.all
   end
   def search
+    query = params[:query]
 
+    @teachers = Teacher.where("name LIKE ? OR phone_number LIKE ?  OR gender LIKE ?  OR email LIKE ? OR date_of_birth LIKE ?  OR address	 LIKE ? OR qualification LIKE ? OR subject LIKE ?",
+                              "%#{query}%", "%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%" ,"%#{query}%","%#{query}%","%#{query}%")
   end
   
   def show

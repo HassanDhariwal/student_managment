@@ -2,6 +2,11 @@ class SectionsController < ApplicationController
   def index
     @sections = Section.all  
   end
+  def search
+    query = params[:query]
+    @sections = Section.where("name LIKE ? OR student_range LIKE ? ",
+                              "%#{query}%","%#{query}%")
+  end
 
   def show
     # binding.pry

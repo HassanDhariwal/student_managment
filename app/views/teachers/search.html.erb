@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-end my-4">
+  <div  class="container  h3 d-flex justify-content-center  border-bottom border-warning-subtle ">
+    Search Results for Teachers Query: "<%= params[:query] %>"
+  </div>
+</div>
+
+<div class="table-responsive-sm my-4">
+  <div class="d-flex me-4 mb-2  justify-content-end">
+    <%= link_to  teachers_path,  class: "btn btn-outline-warning" do %>
+      <i class="bi bi-x"></i>
+    <% end %>
+  </div>
+  <table class="table align-middle bg-warning-subtle  border border-4  shadow p-3 mb-5 border-warning-subtle ">
+    <thead class="table-dark ">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>date_of_birth</th>
+      <th>Address</th>
+      <th>Qualifications</th>
+      <th>Subject</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @teachers.each do |teacher|%>
+      <tr>
+        <td><%= teacher.id  %></td>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.phone_number %></td>
+        <td><%= teacher.email %></td>
+        <td><%= teacher.gender %></td>
+        <td><%= teacher.date_of_birth %></td>
+        <td><%= teacher.address %></td>
+        <td><%= teacher.qualification %></td>
+        <td><%= teacher.subject %></td>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

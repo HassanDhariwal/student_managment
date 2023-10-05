@@ -5,7 +5,13 @@
     Search Results for Students Query: "<%= params[:query] %>"
   </div>
 </div>
+
 <div class="table-responsive-sm my-4">
+  <div class="d-flex me-4 mb-2  justify-content-end">
+    <%= link_to  students_path,  class: "btn btn-outline-info" do %>
+      <i class="bi bi-x"></i>
+    <% end %>
+  </div>
   <table class="table align-middle bg-danger-subtle  border border-4  shadow p-3 mb-5 border-primary-subtle ">
     <thead class="table-dark ">
     <tr>
@@ -37,75 +43,6 @@
         <td><%= student.blood_group %></td>
         <td><%= student.section&.name %></td>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
-
-
-
-<div class="d-flex justify-content-end my-4">
-  <div  class="container  h3 d-flex justify-content-center  border-bottom border-danger-subtle ">
-    Search Results for Sections Query: "<%= params[:query] %>"
-  </div>
-</div>
-
-<div class="table-responsive-sm my-4">
-  <table class="table align-middle bg-danger-subtle  border border-4  shadow p-3 mb-5 border-danger-subtle ">
-    <thead class="table-dark ">
-    <tr>
-      <th>ID</th>
-      <th>Sections</th>
-      <th>Students Range</th>
-      <th>Total students</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @sections.each do |section|%>
-      <tr>
-        <td class="text-secondary"><%= section.id %></td>
-        <td><%= section.name %></td>
-        <td><%= section.student_range %></td>
-        <td><%= section.students.count %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
-
-
-<div class="d-flex justify-content-end my-4">
-  <div  class="container  h3 d-flex justify-content-center  border-bottom border-warning-subtle ">
-    Search Results for Teachers Query: "<%= params[:query] %>"
-  </div>
-</div>
-<div class="table-responsive-sm my-4">
-  <table class="table align-middle bg-warning-subtle  border border-4  shadow p-3 mb-5 border-warning-subtle ">
-    <thead class="table-dark ">
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Gender</th>
-      <th>date_of_birth</th>
-      <th>Address</th>
-      <th>Qualifications</th>
-      <th>Subject</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @teachers.each do |teacher|%>
-      <tr>
-        <td><%= teacher.id  %></td>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.phone_number %></td>
-        <td><%= teacher.email %></td>
-        <td><%= teacher.gender %></td>
-        <td><%= teacher.date_of_birth %></td>
-        <td><%= teacher.address %></td>
-        <td><%= teacher.qualification %></td>
-        <td><%= teacher.subject %></td>
     <% end %>
     </tbody>
   </table>

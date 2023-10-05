@@ -1,9 +1,7 @@
 
-
-
 <div class=" d-flex justify-content-end me-2 my-4">
 	<form class="d-flex" method="GET" action="<%= search_students_path %>">
-		<input class="form-control me-2" type="text" name="query" placeholder="SearchStudents ">
+		<input class="form-control me-2" type="text" name="query" placeholder="Search Students ">
 		<button class="btn btn-outline-info" type="submit">Search</button>
 	</form>
 </div>
@@ -40,7 +38,7 @@
     		<th scope="col" >Delete</th>
   		</tr>
   	</thead>
-  	<tbody
+  	<tbody>
   		<% @students.each do |student|%>
   			<tr>
   				<td class="text-secondary"><%= student.id %></td>
